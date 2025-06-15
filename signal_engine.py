@@ -5,6 +5,7 @@ from config import ATIVOS
 from datetime import datetime, timedelta
 import pytz
 import random
+from audio_alert import alerta_sonoro
 
 def gerar_sinal(modo):
     for ativo in ATIVOS:
@@ -27,6 +28,7 @@ def gerar_sinal(modo):
                         "Saída": saida,
                         "Tendência": f"{tendencia}%"
                     }
+                    alerta_sonoro(sinal['ativo'])
                     return sinal
         except:
             continue
