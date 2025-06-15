@@ -4,3 +4,4 @@ pandas
 numpy
 cohere
 pytz
+gTTS
